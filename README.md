@@ -1,5 +1,5 @@
 # :musical_note: Music Quest
-![](https://i.gyazo.com/43d36cff2a4773a70f9c60af4d674c44.png)
+![](https://i.gyazo.com/9586dd65523f6a6294bc1ce2cb045f4e.jpg)
 
 # :musical_note: このアプリは?
 音楽情報共有サービス&音楽探求アプリです。
@@ -57,3 +57,13 @@
 |text|string||
 - belongs_to :user
 - belongs_to :tweet
+
+# 制作背景
+## 工夫したこと
+- test
+
+## 苦労したこと
+- test
+
+## 今後の課題・学習すること
+- test
