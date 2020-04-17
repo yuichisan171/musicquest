@@ -1,0 +1,117 @@
+// トップ画面
+.topImage {
+  &--image_test{
+    width: 100%;
+  }
+}
+
+.top_contents {
+  &__title {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+  }
+  &__tweet_content {
+    height: 200px;
+    width: 300px;
+    float: left;
+    margin: 100px 20px 10px;
+    box-shadow: 0 0 5px;
+    border-radius: 1rem;
+    &--body {
+      background-color: lightblue;
+      border-radius: 1rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    &__bottom {
+      display: flex;
+      &--userName {
+      }
+      &__comment {
+        display: inline-block;
+        padding: 0.3em 1em;
+        text-decoration: none;
+        color: #67c5ff;
+        border: solid 2px #67c5ff;
+        border-radius: 3px;
+        transition: .4s;
+        &--icon {
+        }
+      }
+      &__comment:hover {
+        background: #67c5ff;
+        color: white;
+      }
+    }
+  }
+}
+
+// ツイートの詳細画面
+.tweet_contents {
+  padding-top: 100px;
+  text-align: center;
+  .tweet_content {
+    background-color: #33cccc;
+    margin-bottom: 20px;
+    &__top {
+      padding: 10px 100px;
+      &--body {
+        background-color: #ffffff;
+        border-radius: 25px;
+        height: 200px;
+      }
+    }
+    &__bottom {
+      text-align: center;
+      &--name {
+        text-align: left;
+        margin-left: 120px;
+      }
+      &__outputNew {
+        &--btn {
+          border: solid 2px blue;
+          background-color: #aaa;
+          padding: 4px;
+          border-radius: 3px;
+          text-decoration: none;
+          font-size: 20px;
+          font-weight: bold;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+  .output_content {
+    padding: 0 100px;
+    &__body {
+      height: 300px;
+      width: calc(100% - 200px);
+      display: flex;
+      &__review {
+      }
+      &__name {
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+// ツイートの投稿画面
+.form_content {
+  padding-top: 100px;
+  text-align: center;
+  .input_box {
+    margin-top: 10px;
+    &__text {
+      height: 200px;
+      width: 500px;
+    }
+    &__submit_btn {
+      height: 50px;
+      width: 100px;
+      border-radius: 10px;
+    }
+  }
+}

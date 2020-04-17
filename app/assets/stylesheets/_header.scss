@@ -1,0 +1,30 @@
+.header{
+  padding: 0 150px;
+  position: fixed; /* 要素の位置を固定する */
+  margin: 0; /* 要素の余白を０にする */
+  padding: 10px; /* 要素内側の余白を指定する */
+  height: 56px; /* 高さを指定する */
+  width: 100%; /* 幅を指定する */
+  background-color: rgba(0, 25, 0, 0.6);
+  &__bar-row{
+    display: flex;
+    justify-content: space-between;
+    line-height: 56px;
+    font-weight: bold;
+    &--title{
+      font-size: 26px;
+      color: white;
+      text-decoration: none;
+      margin-left: 10px;
+    }
+    &__right{
+      display: flex;
+      &--item{
+        color: white;
+        margin-right: 50px;
+        text-decoration: none;
+
+      }
+    }
+  }
+}

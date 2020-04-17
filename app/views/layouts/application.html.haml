@@ -1,0 +1,30 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title MusicQuest
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+  %body
+    .header{ id: "fixed" }
+      .header__bar-row
+        = link_to root_path, class: "header__bar-row--title" do
+          Music Quest
+        - if user_signed_in?
+          .header__bar-row__right
+            = link_to destroy_user_session_path, method: :delete, class: "header__bar-row__right--item" do
+              ログアウト
+            = link_to new_tweet_path, class: "header__bar-row__right--item" do
+              曲を探す
+            .header__bar-row__right--item
+              = icon('fas fa','user-circle')
+              = current_user.nickname
+        - else
+          .header__bar-row__right
+            = link_to new_user_session_path, class: "header__bar-row__right--item" do
+              ログイン
+            = link_to new_user_registration_path, class: "header__bar-row__right--item" do
+              新規登録
+    = yield

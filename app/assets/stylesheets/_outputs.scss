@@ -1,0 +1,33 @@
+.output_contents {
+  padding-top: 100px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    &__form{
+      &__title1 {
+        font-size: 20px;
+        font-weight: bold;
+        color: orange;
+        &--review {
+          height: 100px;
+          width: 70%;
+        }
+      }
+      &__title2 {
+        font-size: 20px;
+        font-weight: bold;
+        color: orange;
+        &--url {
+          width: 70%;
+        }
+        &--btn {
+          height: 50px;
+          width: 100px;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}

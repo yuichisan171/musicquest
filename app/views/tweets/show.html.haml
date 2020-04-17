@@ -1,0 +1,27 @@
+.tweet_contents
+  .tweet_content
+    .tweet_content__top
+      .tweet_content__top--body
+        = simple_format(@tweet.text)
+    .tweet_content__bottom
+      .tweet_content__bottom--name
+        = @tweet.nickname
+      - if user_signed_in? && current_user.id
+        .tweet_content__bottom__outputNew
+          = link_to "曲を投稿する", new_tweet_output_path(@tweet), class: "tweet_content__bottom__outputNew--btn"
+      - else
+        .tweet_content__bottom--warning
+          曲を投稿したい方はログインしよう!
+  .output_content
+    %h4 おすすめ動画一覧
+    - @outputs.each do |output|
+      .output_content__body
+        .output_content__body__youtube_container
+        %iframe{allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", allowfullscreen: "", frameborder: "0", height: "200", src: "https://www.youtube.com/embed/#{output.youtube_url.last(11)}", width: "300", class: "output_content__body__youtube_container--movie"}
+        %iframe{width: "312", height: "176", src: "https://ext.nicovideo.jp/thumb/sm#{output.youtube_url.last(8) && output.youtube_url.last(7)}", scrolling: "no", style: "border:solid 1px #ccc;", frameborder: "0"}
+
+        .output_content__body__review
+        = output.review
+
+        .output_content__body__name
+        = output.user.nickname

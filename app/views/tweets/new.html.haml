@@ -1,0 +1,6 @@
+.form_content
+  = form_for [@tweet] do |f|
+    %h1 曲を探そう！
+    .input_box
+      = f.text_area :text, class: 'input_box__text', placeholder: '例: 春を感じるJ-POPソング探してます!,洋楽でテンション上がる曲知ってる人!etc...', rows: "10"
+      = f.submit 'さがす!', class: 'input_box__submit_btn'
