@@ -26,8 +26,6 @@
 - 曲を教えるには、ツイート詳細画面の「曲を教える」から、その要望に対してBGM付きの動画を提供してください。対応動画サイトはyoutube,niconicoです。
 - そのレビューには、自分がこの曲と出会ってから今までの思い出を語るなど、ちょっと軽い感じでレビューしてもOKです!
 
-
-
 # :musical_note: アプリの成分
 - 言語: Haml,Scss,Ruby
 - フレームワーク: Ruby on Rails
@@ -63,6 +61,10 @@
 |tweet_id|integer|null: false, foreign_key: true|
 - belongs_to :user
 - belongs_to :tweet
+
+### ERD
+![](https://www.lucidchart.com/publicSegments/view/86374a22-487f-4d64-909c-212e1a6fc88a/image.jpeg)
+使用ソフトウェア:Lucidchart
 
 # 制作背景
 ## 製作理由
