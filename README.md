@@ -1,5 +1,6 @@
 # :musical_note: Music Quest
 ![](https://i.gyazo.com/9586dd65523f6a6294bc1ce2cb045f4e.jpg)
+[![Screenshot from Gyazo](https://gyazo.com/1004ab98396366e553ec14c2ef46c49b/raw)](https://gyazo.com/1004ab98396366e553ec14c2ef46c49b)
 
 # :musical_note: このアプリは?
 音楽情報共有サービス&音楽探求アプリです。
@@ -24,6 +25,8 @@
 
 - 曲を教えるには、ツイート詳細画面の「曲を教える」から、その要望に対してBGM付きの動画を提供してください。対応動画サイトはyoutube,niconicoです。
 - そのレビューには、自分がこの曲と出会ってから今までの思い出を語るなど、ちょっと軽い感じでレビューしてもOKです!
+
+
 
 # :musical_note: アプリの成分
 - 言語: Haml,Scss,Ruby

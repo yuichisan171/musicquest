@@ -9,7 +9,8 @@
     .top_contents__tweet_content--body
       = simple_format(tweet.text)
     .top_contents__tweet_content__bottom
-      .top_contents__tweet_content__bottom--userName
+      .top_contents__tweet_content__bottom__username
+        = icon('fas fa','user-circle', class: "top_contents__tweet_content__bottom__username--icon")
         = tweet.user.nickname
       = link_to tweet_path(tweet), method: :get, class: "top_contents__tweet_content__bottom__comment" do
         = icon('far fa', 'comment', class: 'top_contents__tweet_content__bottom__comment--icon')

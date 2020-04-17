@@ -21,13 +21,11 @@
     &--body {
       background-color: lightblue;
       border-radius: 1rem;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
     &__bottom {
       display: flex;
-      &--userName {
+      &__username {
+        margin: 1px 8px;
       }
       &__comment {
         display: inline-block;
@@ -85,14 +83,31 @@
   }
   .output_content {
     padding: 0 100px;
+    &__title {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
     &__body {
-      height: 300px;
-      width: calc(100% - 200px);
+      height: 240px;
+      width: calc(100vw - 200px);
       display: flex;
-      &__review {
-      }
-      &__name {
-        margin-left: 20px;
+      margin-bottom: 14px;
+      padding: 2px;
+      border-bottom: dotted 1px #aaa;
+      &__right {
+        text-align: left;
+        &__name {
+          margin-left: 8px;
+          &--icon{
+            font-size: 30px;
+          }
+        }
+        &__review {
+          background-color: #beeef5;
+          margin-left: 25px;
+          border-radius: 0 1rem 1rem 1rem;
+          padding: 4px;
+        }
       }
     }
   }
