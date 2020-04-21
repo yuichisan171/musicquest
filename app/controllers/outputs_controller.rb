@@ -6,7 +6,12 @@ class OutputsController < ApplicationController
 
   def create
     @output = Output.create(output_params)
-    redirect_to "/tweets/#{@output.tweet.id}"
+    if @output.save
+      redirect_to tweet_path(@output.tweet.id), notice: "投稿完了です!"
+    else
+      flash.now[:alert] = "メッセージを入力してください!"
+      render template: "outputs/new"
+    end
   end
 
   private

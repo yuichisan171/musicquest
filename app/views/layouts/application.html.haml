@@ -8,6 +8,7 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
   %body
+    = render partial: 'layouts/flash'
     .header{ id: "fixed" }
       .header__bar-row
         = link_to root_path, class: "header__bar-row--title" do
@@ -20,7 +21,7 @@
               曲を探す
             .header__bar-row__right--item
               = icon('fas fa','user-circle')
-              = current_user.nickname
+              = current_user.nickname+" さん"
         - else
           .header__bar-row__right
             = link_to new_user_session_path, class: "header__bar-row__right--item" do

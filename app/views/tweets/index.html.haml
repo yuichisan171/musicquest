@@ -1,7 +1,7 @@
-.topImage
-  = image_tag asset_path('a0046233_011610.jpg'), class: "topImage--image_test"
-
 .top_contents
+  .top_contents__topImage
+    = image_tag asset_path('a0046233_011610.jpg'), class: "top_contents__topImage--image"
+
   .top_contents__title
     最新のツイート一覧
 - @tweets.each do |tweet|
@@ -13,5 +13,8 @@
         = icon('fas fa','user-circle', class: "top_contents__tweet_content__bottom__username--icon")
         = tweet.user.nickname
       = link_to tweet_path(tweet), method: :get, class: "top_contents__tweet_content__bottom__comment" do
-        = icon('far fa', 'comment', class: 'top_contents__tweet_content__bottom__comment--icon')
         おしえて！
+      .top_contents__tweet_content__bottom__count
+        = icon('far fa', 'comment', class: 'top_contents__tweet_content__bottom__count--icon')
+        = "#{tweet.outputs.length}"
+= paginate(@tweets)
