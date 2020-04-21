@@ -19,11 +19,15 @@
     }
     &__right{
       display: flex;
-      &--item{
+      &__item{
         color: white;
         margin-right: 50px;
         text-decoration: none;
-
+        &--greeting_message {
+          font-size: 2px;
+          line-height: 2px;
+          color: #ccc;
+        }
       }
     }
   }

@@ -15,17 +15,19 @@
           Music Quest
         - if user_signed_in?
           .header__bar-row__right
-            = link_to destroy_user_session_path, method: :delete, class: "header__bar-row__right--item" do
+            = link_to destroy_user_session_path, method: :delete, class: "header__bar-row__right__item" do
               ログアウト
-            = link_to new_tweet_path, class: "header__bar-row__right--item" do
+            = link_to new_tweet_path, class: "header__bar-row__right__item" do
               曲を探す
-            .header__bar-row__right--item
+            .header__bar-row__right__item
+              .header__bar-row__right__item--greeting_message
+                = "こんにちは"
               = icon('fas fa','user-circle')
               = current_user.nickname+" さん"
         - else
           .header__bar-row__right
-            = link_to new_user_session_path, class: "header__bar-row__right--item" do
+            = link_to new_user_session_path, class: "header__bar-row__right__item" do
               ログイン
-            = link_to new_user_registration_path, class: "header__bar-row__right--item" do
+            = link_to new_user_registration_path, class: "header__bar-row__right__item" do
               新規登録
     = yield
