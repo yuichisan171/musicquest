@@ -1,0 +1,17 @@
+// ツイートの投稿画面
+.form_content {
+  padding-top: 100px;
+  text-align: center;
+  .input_box {
+    margin-top: 10px;
+    &__text {
+      height: 200px;
+      width: 500px;
+    }
+    &__submit_btn {
+      height: 50px;
+      width: 100px;
+      border-radius: 10px;
+    }
+  }
+}

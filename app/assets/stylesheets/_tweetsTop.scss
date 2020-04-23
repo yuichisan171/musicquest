@@ -1,0 +1,50 @@
+// トップ画面
+.top_contents {
+  &__topImage {
+    &--image{
+      width: 100%;
+    }
+  }
+  &__title {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+  }
+  &__tweet_contents {
+
+    &__tweet_content {
+      height: 200px;
+      width: 300px;
+      float: left;
+      margin: 100px 20px 10px;
+      box-shadow: 0 0 5px;
+      border-radius: 1rem;
+      &--body {
+        background-color: lightblue;
+        border-radius: 1rem;
+      }
+      &__bottom {
+        display: flex;
+        &__username {
+          margin: 1px 8px;
+        }
+        &__comment {
+          display: inline-block;
+          padding: 0.3em 1em;
+          text-decoration: none;
+          color: #67c5ff;
+          border: solid 2px #67c5ff;
+          border-radius: 3px;
+          transition: .4s;
+        }
+        &__comment:hover {
+          background: #67c5ff;
+          color: white;
+        }
+        &__count {
+          color: gray;
+        }
+      }
+    }
+  }
+}

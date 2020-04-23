@@ -1,20 +1,20 @@
 .top_contents
   .top_contents__topImage
     = image_tag asset_path('a0046233_011610.jpg'), class: "top_contents__topImage--image"
-
   .top_contents__title
     最新のツイート一覧
-- @tweets.each do |tweet|
-  .top_contents__tweet_content
-    .top_contents__tweet_content--body
-      = simple_format(tweet.text)
-    .top_contents__tweet_content__bottom
-      .top_contents__tweet_content__bottom__username
-        = icon('fas fa','user-circle', class: "top_contents__tweet_content__bottom__username--icon")
-        = tweet.user.nickname
-      = link_to tweet_path(tweet), method: :get, class: "top_contents__tweet_content__bottom__comment" do
-        おしえて！
-      .top_contents__tweet_content__bottom__count
-        = icon('far fa', 'comment', class: 'top_contents__tweet_content__bottom__count--icon')
-        = "#{tweet.outputs.length}"
+  .top_contents__tweet_contents
+    - @tweets.each do |tweet|
+      .top_contents__tweet_contents__tweet_content
+        .top_contents__tweet_contents__tweet_content--body
+          = simple_format(tweet.text)
+        .top_contents__tweet_contents__tweet_content__bottom
+          .top_contents__tweet_contents__tweet_content__bottom__username
+            = icon('fas fa','user-circle', class: "top_contents__tweet_contents__tweet_content__bottom__username--icon")
+            = tweet.user.nickname
+          = link_to tweet_path(tweet), method: :get, class: "top_contents__tweet_contents__tweet_content__bottom__comment" do
+            おしえて！
+          .top_contents__tweet_contents__tweet_content__bottom__count
+            = icon('far fa', 'comment', class: 'top_contents__tweet_contents__tweet_content__bottom__count--icon')
+            = "#{tweet.outputs.length}"
 = paginate(@tweets)
