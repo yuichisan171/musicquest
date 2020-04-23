@@ -2,7 +2,7 @@
 [![Screenshot from Gyazo](https://gyazo.com/5e4cd789892092c861ba5c2943988597/raw)](https://gyazo.com/5e4cd789892092c861ba5c2943988597)
 
 ## DEMO
-[![Screenshot from Gyazo](https://gyazo.com/b05bbd368def319dc2a57ca5a23de719/raw)](https://gyazo.com/b05bbd368def319dc2a57ca5a23de719)
+[![Screenshot from Gyazo](https://gyazo.com/2869dfe205711fbd7e0ddea759074dcb/raw)](https://gyazo.com/2869dfe205711fbd7e0ddea759074dcb)
 
 # :musical_note: このアプリは?
 音楽情報共有サービス&音楽探求アプリです。

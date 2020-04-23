@@ -15,6 +15,6 @@
           = link_to tweet_path(tweet), method: :get, class: "top_contents__tweet_contents__tweet_content__bottom__comment" do
             おしえて！
           .top_contents__tweet_contents__tweet_content__bottom__count
-            = icon('far fa', 'comment', class: 'top_contents__tweet_contents__tweet_content__bottom__count--icon')
+            = icon('fas fa', 'comment-alt', class: 'top_contents__tweet_contents__tweet_content__bottom__count--icon')
             = "#{tweet.outputs.length}"
 = paginate(@tweets)

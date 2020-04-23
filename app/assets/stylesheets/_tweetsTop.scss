@@ -1,4 +1,4 @@
-// トップ画面
+
 .top_contents {
   &__topImage {
     &--image{
@@ -19,30 +19,41 @@
       margin: 100px 20px 10px;
       box-shadow: 0 0 5px;
       border-radius: 1rem;
+      position: relative;
       &--body {
         background-color: lightblue;
         border-radius: 1rem;
       }
       &__bottom {
         display: flex;
+        position: absolute;
+        bottom: 0;
+        align-items: center;
         &__username {
-          margin: 1px 8px;
+          margin: 0 8px;
         }
         &__comment {
           display: inline-block;
           padding: 0.3em 1em;
           text-decoration: none;
-          color: #67c5ff;
-          border: solid 2px #67c5ff;
+          color: $commentButtonColor;
+          border: solid 2px $commentButtonColor;
           border-radius: 3px;
           transition: .4s;
         }
         &__comment:hover {
-          background: #67c5ff;
-          color: white;
+          background: $commentButtonColor;
+          color: $mainWhiteColor;
         }
         &__count {
-          color: gray;
+          margin-left: 3px;
+          color: $mainWhiteColor;
+          background-color: $backGrayColor;
+          border-radius: 12px;
+          line-height: 20px;
+          height: 20px;
+          width: 60px;
+          text-align: center;
         }
       }
     }

@@ -3,12 +3,14 @@
   clear: both;
   text-align: center;
   font-size: 16px;
+
   .page.current {
     background: #93c9ff;     /*背景の色を変える*/
-    border-radius: 15px;
+    padding: 10px;
+    border-radius: 20px;
   }
-  span {
+  span,a {
     margin: 0 7px;
-    color: white;
+    text-decoration: none;
   }
 }
