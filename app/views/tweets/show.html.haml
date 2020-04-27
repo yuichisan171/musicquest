@@ -18,9 +18,8 @@
     - @outputs.each do |output|
       .output_content__body
         .output_content__body__left
-        %iframe{allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", allowfullscreen: "", frameborder: "0", height: "200", src: "https://www.youtube.com/embed/#{output.youtube_url.last(11)}", width: "300", class: "output_content__body__left--youtube_container"}
-        %iframe{width: "312", height: "176", src: "https://ext.nicovideo.jp/thumb/sm#{output.youtube_url.last(8) || output.youtube_url.last(7)}", scrolling: "no", style: "border:solid 1px #ccc;", frameborder: "0", class: "output_content__body__left--niconico_container"}
-        
+        %iframe{allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", allowfullscreen: "", frameborder: "0", height: "315", src: "https://www.youtube.com/embed/#{output.youtube_url.last(11)}", width: "560", class: "output_content__body__left--youtube_container"}
+
         .output_content__body__right
           .output_content__body__right__name
             = icon('fas fa','user-circle', class: "output_content__body__right__name--icon")
