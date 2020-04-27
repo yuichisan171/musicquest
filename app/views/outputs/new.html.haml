@@ -7,3 +7,30 @@
       .output_contents__content__form__title2 YouTubeURL
       = f.text_field :youtube_url, placeholder: "youtube_url" , rows: "1", class: "output_contents__content__form__title2--url"
       = f.submit "投稿する", class: "output_contents__content__form__title2--btn"
+  .output_contents__guide
+    .output_contents__guide__guide1-content
+      %p 利用時に注意すること
+      %ul
+        相手に不快を与える行為はしないようお願いします。
+        %li 不適切な表現が含まれている動画を投稿しないこと(音楽とは全く関係のない動画)
+        %li ユーザーへの荒らし・誹謗中傷・いたずら行為
+        %li その他、運営者が不適切と判断したもの
+    %p 投稿方法
+    .output_contents__guide__guide2-content
+      .output_contents__guide__guide2-content__title
+        = "1.共有用のurlからコピペする方法"
+      .output_contents__guide__guide2-content__bottom
+        = video_tag 'sample.mp4', controls: '', width: '500px' ,height: '300px', class: 'output_contents__guide__guide2-content__bottom--gif'
+
+    .output_contents__guide__guide3-content
+      .output_contents__guide__guide3-content__title
+        = "2.直接URLからコピペする方法。"
+      .output_contents__guide__guide3-content__bottom
+        = image_tag 'sample3.jpg', width: '600px',height: '400px', class: 'output_contents__guide__warning__title--img'
+        %ul
+          %li
+            ※ 「&t=」または「&list=」から始まるコード(赤枠)はペーストあと動画が再生されないのでご注意ください。 ※
+          %li
+            = image_tag 'sample.png', height: '35px', class: 'output_contents__guide__warning__title--img'
+          %li
+            = image_tag 'sample2.png', height: '35px', class: 'output_contents__guide__warning__title--img'

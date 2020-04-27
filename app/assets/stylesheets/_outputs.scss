@@ -30,4 +30,48 @@
       }
     }
   }
+
+  &__guide{
+    margin-top: 20px;
+    &__guide1-content {
+      ul {
+        text-align: center;
+      }
+      ul>li{
+        list-style: inside;
+        text-align: left;
+        padding: 0 300px;
+        margin: 3px 0;
+      }
+  
+    }
+    &__guide2-content {
+      text-align: center;
+      &__title {
+        margin: 10px 0;
+      }
+    }
+    &__guide3-content {
+      margin-top: 25px;
+      &__title {
+        text-align: center;
+        margin: 10px 0;
+      }
+      &__bottom {
+        text-align: center;
+        ul>li {
+          padding: 0 300px;
+          text-align: left;
+
+        }
+      }
+    }
+    p {
+      font-size: 22px;
+      font-weight: bold;
+      text-align: center;
+      background-color: gray;
+      margin: 20px 0;
+    }
+  }
 }
