@@ -5,11 +5,36 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.6.3-stretch-node
+      - image: circleci/ruby:2.6.3-node-browsers
+        environment:
+          - MYSQL_HOST: 127.0.0.1
+          - MYSQL_DATABASE: rails
+          - MYSQL_USERNAME: root
+          - MYSQL_PASSWORD: ''
+      - image: circleci/mysql:5.7-ram
+        environment:
+          - MYSQL_ALLOW_EMPTY_PASSWORD: true
+          - MYSQL_DATABASE: rails
+          - MYSQL_ROOT_HOST: '%'
     executor: ruby/default
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "Gemfile.lock" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
       - run:
-          name: Which bundler?
-          command: bundle -v
-      - ruby/bundle-install
+          name: install dependencies
+          command: |
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+
+      # Database setup
+      - run: bundle exec rake db:schema:load
+
+      # run tests!
+      - run: bin/rails test
