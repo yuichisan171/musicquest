@@ -1,15 +1,35 @@
 version: 2.1 # CicleCIのバージョンは2.1
-orbs:
-  ruby: circleci/ruby@0.1.2 
-
 jobs: # 指定したjobはbuildの1つ
   build:
     docker:
-      - image: circleci/ruby:2.6.3-stretch-node # Dockerコンテナはrubyを使う?
-    executor: ruby/default
+      - image: circleci/ruby:2.6.3-node-browsers
+      - MYSQL_HOST: 127.0.0.1
+      - MYSQL_DATABASE: rails
+      - MYSQL_USERNAME: root
+      - MYSQL_PASSWORD: ''
+      - image: circleci/mysql:5.7-ram
+        environment:
+        - MYSQL_ALLOW_EMPTY_PASSWORD: true
+        - MYSQL_DATABASE: rails
+        - MYSQL_ROOT_HOST: '%'
     steps:
       - checkout
+      - restore_csche:
+        keys:
+          - v1-dependencies-{{ checksum "Gemfile/lock" }}
+          # fallback to using the latest cache if no exact match is found
+          - vi-dependencies
+
+
       - run:
-          name: Which bundler?
-          command: bundle -v
-      - ruby/bundle-install
+          name: install dependencies
+          command: |
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
+            
+      - sabe_cache:
+        paths:
+          - ./vendor/bundle
+        key: vi-dependencies-{{ checksum "Gemfile/lock" }}
+
+      - run: bundle exec rake db:schema:load
+      - run: bin/rails test
