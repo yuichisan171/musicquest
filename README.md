@@ -7,27 +7,6 @@
 # :musical_note: App URL
 接続先: https://musicquest.herokuapp.com/
 
-## テストアカウント
-
-- ツイート用アカウント
-  - ニックネーム: testA
-  - メールアドレス: test_a@music.com
-  - パスワード: test0000
-
-- コメント用アカウント
-  - ニックネーム: testB
-  - メールアドレス: test_b@music.com
-  - パスワード: test0001
-
-- ツイート用の投稿情報
-  - ツイート: 朝起きたときに聴きたくなる曲を探しています。
-
-- コメント用の投稿情報
-  - コメント: とても爽やかで気持ちいい曲です。是非聴いてみてください。
-  - YoutubeURL: https://www.youtube.com/watch?v=2KzkWWkPSpU
-
-使用BGM: フリーBGM「DOVA-SYNDROME」
-
 # :musical_note: このアプリは?
 音楽情報共有サービス&音楽探求アプリです。
 気分に合わせた曲、季節に合わせた曲、動画編集やプレゼンの演出に使いたい曲など、それぞれのシチュエーションに合わせた曲を探し、様々な要望に応えて曲をアウトプットするアプリです。
@@ -53,7 +32,7 @@
 
 ## インストール
 ```
-$ cd ~/hoge
+$ cd ~/<ディレクトリを作成願います。>
 $ git clone https://github.com/yuichisan171/musicquest.git
 $ cd musicquest
 $ bundle install
@@ -90,12 +69,14 @@ youtubeのurlをフォームに貼り付けて投稿した際に、ツイート�
 今後はcanvasを用いた2Dゲームを開発するため、HTML/CSS,JavaScript,jQueryを勉強しています。
 
 # :musical_note: 使用した技術
-- Haml,Scss,Ruby
-- フレームワーク: Ruby on Rails 5.2.4.1
-- DB: MySQL
-- ソースコード管理: GitHub
+- Haml 5.1.2
+- Scss
+- Ruby 2.5.1
+- Ruby on Rails 5.2.4.1
+- MySQL
+- GitHub
 - CI: CircleCI
-- deploy: heroku
+- heroku
 
 ## DB
 ### usersテーブル
@@ -133,7 +114,7 @@ youtubeのurlをフォームに貼り付けて投稿した際に、ツイート�
 
 使用ソフトウェア:Lucidchart
 
-# その他
+# :musical_note: その他
 [Twitter](https://twitter.com/yuichisan171)
 [Qiita](https://qiita.com/yuichisan65)
 [GitHub](https://github.com/yuichisan171)
@@ -141,5 +122,6 @@ youtubeのurlをフォームに貼り付けて投稿した際に、ツイート�
 - 参考サイト
 [音楽で感情を操る方法とは？](https://daigoblog.jp/manipulate_emotions_music/)
 
-# ライセンス
+# :musical_note: ライセンス
+* [MIT](https://github.com/yuichisan171/musicquest/blob/master/LICENSE)
 ©2020 MusicQuest

@@ -1,41 +1,15 @@
-version: 2.1
+version: 2.1 # CicleCIのバージョンは2.1
 orbs:
   ruby: circleci/ruby@0.1.2 
 
-jobs:
+jobs: # 指定したjobはbuildの1つ
   build:
-    working_directory: ~/musicquest
     docker:
-      - image: circleci/ruby:2.6.3-node-browsers
-        environment:
-          - MYSQL_HOST: 127.0.0.1
-          - MYSQL_DATABASE: rails
-          - MYSQL_USERNAME: root
-          - MYSQL_PASSWORD: ''
-      - image: circleci/mysql:5.7-ram
-        environment:
-          - MYSQL_ALLOW_EMPTY_PASSWORD: true
-          - MYSQL_DATABASE: rails
-          - MYSQL_ROOT_HOST: '%'
+      - image: circleci/ruby:2.6.3-stretch-node # Dockerコンテナはrubyを使う?
     executor: ruby/default
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "Gemfile.lock" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
       - run:
-          name: install dependencies
-          command: |
-            bundle install --jobs=4 --retry=3 --path vendor/bundle
-      - save_cache:
-          paths:
-            - ./vendor/bundle
-          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-
-      # Database setup
-      - run: bundle exec rake db:schema:load
-
-      # run tests!
-      - run: bin/rails test
+          name: Which bundler?
+          command: bundle -v
+      - ruby/bundle-install

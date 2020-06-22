@@ -1,0 +1,20 @@
+.musicquestDevise
+  .sign-in
+
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .sign-in__field
+      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "sign-in__field--input"
+
+
+    .sign-in__field
+      = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: "sign-in__field--input"
+
+      - if devise_mapping.rememberable?
+        .field
+          = f.check_box :remember_me
+          = f.label :remember_me
+
+    .sign-in__field__actions
+      = f.submit "ログイン" , class: "sign-in__field__actions--btn"
+
+  = render "devise/shared/links"

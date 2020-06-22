@@ -1,0 +1,24 @@
+.musicquestDevise
+
+  .sign-up Sign up
+  = form_for resource, as: resource_name, url: registration_path(resource_name) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    .sign-up__field
+      = f.text_field :nickname, autofocus: true, maxlength: "8", placeholder: "Nickname"
+
+    .sign-up__field
+      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "登録するメールアドレス", class: "sign-up__field--input"
+      
+    .sign-up__field
+      = f.password_field :password, autocomplete: "new-password", placeholder: "パスワード", class: "sign-up__field--input"
+      - if @minimum_password_length
+        %em
+        (#{@minimum_password_length} characters minimum)
+
+    .sign-up__field
+      = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "確認用パスワード", class: "sign-up__field--input"
+
+    .sign-up__actions
+      = f.submit "新規登録"
+
+    = render "devise/shared/links"
