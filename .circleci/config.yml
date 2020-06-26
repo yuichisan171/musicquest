@@ -3,14 +3,14 @@ jobs: # 指定したjobはbuildの1つ
   build:
     docker:
       - image: circleci/ruby:2.6.3-node-browsers
-      - MYSQL_HOST: 127.0.0.1
+      # - MYSQL_HOST: 127.0.0.1
       - MYSQL_DATABASE: rails
       - MYSQL_USERNAME: root
       - MYSQL_PASSWORD: ''
-      - image: circleci/mysql:5.7-ram
+      # - image: circleci/mysql:5.7-ram
         environment:
         - MYSQL_ALLOW_EMPTY_PASSWORD: true
-        - MYSQL_DATABASE: rails
+        # - MYSQL_DATABASE: rails
         - MYSQL_ROOT_HOST: '%'
     steps:
       - checkout
@@ -25,7 +25,7 @@ jobs: # 指定したjobはbuildの1つ
           name: install dependencies
           command: |
             bundle install --jobs=4 --retry=3 --path vendor/bundle
-            
+
       - sabe_cache:
         paths:
           - ./vendor/bundle
