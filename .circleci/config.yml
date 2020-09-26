@@ -4,9 +4,10 @@ jobs: # 指定したjobはbuildの1つ
     docker:
       - image: circleci/ruby:2.6.3-node-browsers
       # - MYSQL_HOST: 127.0.0.1
-      - MYSQL_DATABASE: rails
-      - MYSQL_USERNAME: root
-      - MYSQL_PASSWORD: ''
+        environment:
+        - MYSQL_DATABASE: rails
+        - MYSQL_USERNAME: root
+        - MYSQL_PASSWORD: ''
       # - image: circleci/mysql:5.7-ram
         environment:
         - MYSQL_ALLOW_EMPTY_PASSWORD: true
